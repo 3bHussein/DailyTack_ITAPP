@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ITDBModelStoreContainer" CdmEntityContainer="ITDBEntities">
+    <EntitySetMapping Name="absenceTbs">
+      <EntityTypeMapping TypeName="ITDBModel.absenceTb">
+        <MappingFragment StoreEntitySet="absenceTb">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="DataOfDay" ColumnName="DataOfDay" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DailyLogTbs">
+      <EntityTypeMapping TypeName="ITDBModel.DailyLogTb">
+        <MappingFragment StoreEntitySet="DailyLogTb">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="DateOfDay" ColumnName="DateOfDay" />
+          <ScalarProperty Name="Satement" ColumnName="Satement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orderTbs">
+      <EntityTypeMapping TypeName="ITDBModel.orderTb">
+        <MappingFragment StoreEntitySet="orderTb">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="OrderN" ColumnName="OrderN" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

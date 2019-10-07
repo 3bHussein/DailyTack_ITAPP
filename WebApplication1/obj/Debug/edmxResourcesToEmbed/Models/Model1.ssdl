@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ITDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="absenceTb">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DataOfDay" Type="date" />
+    <Property Name="EmployeeName" Type="nvarchar(max)" />
+    <Property Name="Type" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="DailyLogTb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Day" Type="nvarchar(max)" />
+    <Property Name="DateOfDay" Type="date" />
+    <Property Name="Satement" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="orderTb">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderN" Type="nvarchar(max)" />
+    <Property Name="quantity" Type="int" />
+    <Property Name="Day" Type="date" />
+  </EntityType>
+  <EntityContainer Name="ITDBModelStoreContainer">
+    <EntitySet Name="absenceTb" EntityType="Self.absenceTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DailyLogTb" EntityType="Self.DailyLogTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="orderTb" EntityType="Self.orderTb" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,48 @@
+﻿@model WebApplication1.Models.DailyLogTb
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DailyLogTb</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Day)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Day)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Satement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Satement)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

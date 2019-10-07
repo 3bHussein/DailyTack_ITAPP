@@ -1,0 +1,98 @@
+﻿@model IEnumerable<WebApplication1.Models.DailyLogTb>
+
+@using PagedList;
+@using PagedList.Mvc;
+
+
+<html dir="rtl">
+
+@*<Br />
+    <i class="fa fa-home fa-fw fa-3x"></i>*@
+
+<div style="float:left;width:80%">
+    @using (Html.BeginForm("fullsearch", "DailyLogTbs", FormMethod.Post))
+    {
+
+        <div class="row form-horizontal">
+
+            @Html.TextBox("search", null, new { @class = "form-control col-md-11", placeholder = "search", style = "max-width:500px" })
+
+            <input type="submit" value="searchByName " class="btn btn-primary col-md-1" />|
+            @Html.ActionLink("Back To list", "index", new { area = "" }, new { @class = "btn btn-info" })
+
+        </div>
+
+    }
+</div>
+<div style="text-align:right ; float:right;width:20%">
+
+    <img style="width: 10rem;" src="~/Content/IT_(2017_film)_logo.svg" />
+</div>
+
+
+@*<br />
+    @using (Html.BeginForm("fullsearch", "DailyLogTbs", FormMethod.Post))
+    {
+
+        <div class="row form-horizontal">
+
+            @Html.TextBox("search", null, new { @class = "form-control col-md-11", placeholder = "search", style = "max-width:500px" })
+
+            <input type="submit" value="searchFR" class="btn btn-primary col-md-1" />|
+            @Html.ActionLink("Back To list", "index", new { area = "" }, new { @class = "btn btn-info" })
+
+        </div>
+    }*@
+
+
+
+
+
+
+<br />
+
+
+<p style="clear:both;">
+    @Html.ActionLink("Create New Task", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Day)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Satement)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfDay)
+            </td>
+            <td style="text-align:right">
+                @Html.DisplayFor(modelItem => item.Satement)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+
+
+
+            </td>
+        </tr>
+    }
+
+</table>
+
+@Html.PagedListPager((IPagedList)Model, a => Url.Action("index", new { Page = a }), PagedListRenderOptions.MinimalWithPageCountText)
+</html>

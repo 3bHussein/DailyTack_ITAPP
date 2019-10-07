@@ -1,0 +1,42 @@
+﻿@model WebApplication1.Models.DailyLogTb
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DailyLogTb</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Day)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Day)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Satement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Satement)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
