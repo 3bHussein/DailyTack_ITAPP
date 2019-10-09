@@ -6,7 +6,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html dir="ltr" >
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>fullsearch</title>
@@ -16,7 +16,7 @@
 <body>
     <br />
 
-    <div class="container">
+    <div class="container" dir="ltr">
         @using (Html.BeginForm("fullsearch", "DailyLogTbs", FormMethod.Post))
         {
 
@@ -24,7 +24,7 @@
 
                 @Html.TextBox("search", null, new { @class = "form-control col-md-11", placeholder = "search", style = "max-width:500px" })
 
-                <input type="submit" value="searchByName" class="btn btn-primary col-md-1" />|
+                <input type="submit" style="direction:ltr" value="searchByName" class="btn btn-primary col-md-2" />|
                 @Html.ActionLink("Back To list", "index", new { area = "" }, new { @class = "btn btn-info" })
 
             </div>

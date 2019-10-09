@@ -6,7 +6,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html dir="ltr">
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>fullsearch</title>
@@ -16,19 +16,34 @@
 <body>
     <br />
 
-    <div class="container">
-        @using (Html.BeginForm("go", "DailyLogTbs", FormMethod.Post))
+    <div class="container" dir="ltr">
+        @using (Html.BeginForm("fullsearch1", "DailyLogTbs", FormMethod.Post))
         {
 
             <div class="row form-horizontal">
 
-                @Html.TextBox("search", null, new { @class = "form-control col-md-11", placeholder = "search", style = "max-width:500px" })
+                @Html.TextBox("search1", null, new { @class = "form-control col-md-11", placeholder = "search", style = "max-width:500px" })
 
-                <input type="submit" value="searchFR" class="btn btn-primary col-md-1" />|
+                <input type="submit" style="direction:ltr" value="searchByName" class="btn btn-primary col-md-2" />|
                 @Html.ActionLink("Back To list", "index", new { area = "" }, new { @class = "btn btn-info" })
 
             </div>
         }
+
+
+        @*@using (Html.BeginForm("fullsearch", "DailyLogTbs", FormMethod.Post))
+            {
+
+                <div class="row form-horizontal">
+
+                    @Html.TextBox("search", null, new { @class = "form-control col-md-11", placeholder = "search", style = "max-width:500px" })
+
+                    <input type="submit" value="searchByName" class="btn btn-primary col-md-1" />|
+                    @Html.ActionLink("Back To list", "index", new { area = "" }, new { @class = "btn btn-info" })
+
+                </div>
+            }*@
+
     </div>
     @*<p>
             @Html.ActionLink("Create New", "Create")

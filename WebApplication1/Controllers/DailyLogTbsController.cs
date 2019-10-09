@@ -140,11 +140,11 @@ namespace WebApplication1.Controllers
             return View("fullsearch", db.DailyLogTbs.Where(a => a.Day.Contains(search)));
         }
 
-        //public ActionResult fullsearch(DateTime search)
-        //{
+        public ActionResult fullsearch1(string search1)
+        {
 
-        //    return View("fullsearch", db.DailyLogTbs.Where(a => a.DateOfDay.Contains(search)));
-        //}
+            return View("fullsearch1", db.DailyLogTbs.Where(a => a.DateOfDay.ToString().Contains(search1)));
+        }
 
     }
 }

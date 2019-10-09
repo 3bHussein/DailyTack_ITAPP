@@ -3,12 +3,13 @@
 @{
     ViewBag.Title = "Index";
 }
+<html dir="rtl">
 
 
 <p>
     @Html.ActionLink("Create New Absence", "Create")
 </p>
-<table class="table">
+<table class="table" style="text-align:right">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.DataOfDay)
@@ -25,28 +26,30 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataOfDay)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EmployeeName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataOfDay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
 
-            @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-success" }) |
-            @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-warning" }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })
 
-        </td>
-    </tr>
-}
+            </td>
+        </tr>
+    }
 
 </table>
+</html>

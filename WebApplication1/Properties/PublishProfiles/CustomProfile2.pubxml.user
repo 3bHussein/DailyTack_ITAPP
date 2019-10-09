@@ -232,7 +232,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/28/2018 13:04:24</publishTime>
     </File>
     <File Include="bin/WebApplication1.dll">
-      <publishTime>10/07/2019 09:51:04</publishTime>
+      <publishTime>10/09/2019 11:13:44</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>01/23/2014 13:57:34</publishTime>
@@ -266,9 +266,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Content/datepicker.css">
       <publishTime>12/22/2018 11:42:39</publishTime>
-    </File>
-    <File Include="Content/Img/email-pattern.png">
-      <publishTime>05/22/2019 12:36:26</publishTime>
     </File>
     <File Include="Content/IT_%282017_film%29_logo.svg">
       <publishTime>10/05/2019 13:48:58</publishTime>
@@ -370,7 +367,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/03/2019 19:00:22</publishTime>
     </File>
     <File Include="Views/absenceTbs/Index.cshtml">
-      <publishTime>10/03/2019 19:22:32</publishTime>
+      <publishTime>10/07/2019 10:03:25</publishTime>
     </File>
     <File Include="Views/Account/ConfirmEmail.cshtml">
       <publishTime>10/03/2019 14:27:41</publishTime>
@@ -423,14 +420,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/DailyLogTbs/fullsearch.cshtml">
       <publishTime>10/07/2019 09:15:49</publishTime>
     </File>
+    <File Include="Views/DailyLogTbs/fullsearch1.cshtml">
+      <publishTime>10/07/2019 11:26:18</publishTime>
+    </File>
     <File Include="Views/DailyLogTbs/go.cshtml">
       <publishTime>10/03/2019 17:57:43</publishTime>
     </File>
     <File Include="Views/DailyLogTbs/Index.cshtml">
-      <publishTime>10/05/2019 14:08:52</publishTime>
+      <publishTime>10/09/2019 11:16:14</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>10/05/2019 13:41:37</publishTime>
+      <publishTime>10/09/2019 11:34:19</publishTime>
     </File>
     <File Include="Views/Manage/AddPhoneNumber.cshtml">
       <publishTime>10/03/2019 14:27:41</publishTime>
@@ -472,7 +472,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/03/2019 14:27:41</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>10/07/2019 09:53:08</publishTime>
+      <publishTime>10/09/2019 11:21:03</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>10/03/2019 19:34:29</publishTime>
@@ -484,7 +484,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/03/2019 14:27:34</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/07/2019 08:57:51</publishTime>
+      <publishTime>10/07/2019 10:00:29</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -253,6 +253,7 @@
     </Content>
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile2.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -309,13 +310,13 @@
     <Content Include="Views\orderTbs\Details.cshtml" />
     <Content Include="Views\orderTbs\Edit.cshtml" />
     <Content Include="Views\orderTbs\Index.cshtml" />
-    <Content Include="Views\DailyLogTbs\go.cshtml" />
     <Content Include="Views\DailyLogTbs\fullsearch.cshtml" />
     <Content Include="Views\absenceTbs\Create.cshtml" />
     <Content Include="Views\absenceTbs\Delete.cshtml" />
     <Content Include="Views\absenceTbs\Details.cshtml" />
     <Content Include="Views\absenceTbs\Edit.cshtml" />
     <Content Include="Views\absenceTbs\Index.cshtml" />
+    <Content Include="Views\DailyLogTbs\fullsearch1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
