@@ -309,6 +309,24 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Models/Model1.edmx.diagram">
       <publishTime>10/03/2019 18:58:56</publishTime>
     </File>
+    <File Include="Reports/CrystalReport1.cs">
+      <publishTime>10/19/2019 12:10:44</publishTime>
+    </File>
+    <File Include="Reports/CrystalReport1.rpt">
+      <publishTime>10/19/2019 12:10:43</publishTime>
+    </File>
+    <File Include="Reports/DataSet1.Designer.cs">
+      <publishTime>10/19/2019 12:10:44</publishTime>
+    </File>
+    <File Include="Reports/DataSet1.xsc">
+      <publishTime>10/19/2019 12:10:44</publishTime>
+    </File>
+    <File Include="Reports/DataSet1.xsd">
+      <publishTime>10/19/2019 12:10:44</publishTime>
+    </File>
+    <File Include="Reports/DataSet1.xss">
+      <publishTime>10/19/2019 12:10:44</publishTime>
+    </File>
     <File Include="Scripts/a.js">
       <publishTime>10/03/2019 14:57:05</publishTime>
     </File>
