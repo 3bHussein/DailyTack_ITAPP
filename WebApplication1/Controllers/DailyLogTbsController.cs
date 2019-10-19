@@ -11,6 +11,8 @@ using WebApplication1.Models;
 //
 using PagedList;
 using PagedList.Mvc;
+using CrystalDecisions.CrystalReports.Engine;
+using System.IO;
 
 namespace WebApplication1.Controllers
 {
@@ -144,6 +146,37 @@ namespace WebApplication1.Controllers
         {
 
             return View("fullsearch1", db.DailyLogTbs.Where(a => a.DateOfDay.ToString().Contains(search1)));
+        }
+        public ActionResult Export()
+        {
+            #region list
+            var result = (from p in db.DailyLogTbs
+                         
+
+                          select new
+                          {
+                              p.Id,
+                              p.Day,
+                              p.DateOfDay,
+                              p. Satement,
+                            
+                          }).ToList();
+            #endregion
+
+
+            //var result2 = ().tolist();
+
+
+            ReportDocument rd = new ReportDocument();
+            rd.Load(Path.Combine(Server.MapPath("../Reports/CrystalReport1.rpt")));
+                rd.SetDataSource(result);
+            Response.Buffer = false;
+            Response.ClearContent();
+            Response.ClearHeaders();
+            Stream steam = rd.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+            steam.Seek(0, SeekOrigin.Begin);
+
+            return File(steam, "application/pdf", "ListOfStocks.pdf");
         }
 
     }
