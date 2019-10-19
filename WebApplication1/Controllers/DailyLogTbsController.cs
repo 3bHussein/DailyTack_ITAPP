@@ -169,7 +169,7 @@ namespace WebApplication1.Controllers
 
             ReportDocument rd = new ReportDocument();
             rd.Load(Path.Combine(Server.MapPath("../Reports/CrystalReport1.rpt")));
-            rd.SetDataSource(result);
+                rd.SetDataSource(result);
             Response.Buffer = false;
             Response.ClearContent();
             Response.ClearHeaders();
