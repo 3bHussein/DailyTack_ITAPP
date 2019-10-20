@@ -18,8 +18,8 @@
 
 
 @*@Html.ActionLink("Print", "Export", "DailyLogTbs", new { area = "" }, new { @class = "btn btn-danger" })*@
-    <input value="Print By" onclick="PrintElem()" type="button" />
-    <input value="Print Bdy" onclick="printcon('pro')" type="button" />
+    <input value="Print Win" onclick="window.print();" type="button" />
+    <input value="Print BOdy" onclick="printDiv('pro')" type="button" />
 
     <div class="container" dir="ltr">
         @using (Html.BeginForm("fullsearch1", "DailyLogTbs", FormMethod.Post))
@@ -117,11 +117,19 @@
     </script>
 
     <script>
-        function printcon(el) {
-            var re = document.body.innerHTML;
-            var prcon = document.getElementById(el).innerHTML;
-            document.body.innerHTML = prcon;
+        //function printcon(el) {
+        //    var re = document.body.innerHTML;
+        //    var prcon = document.getElementById(el).innerHTML;
+        //    document.body.innerHTML = prcon;
+        //    window.print();
+        //}
+
+        function printDiv(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
             window.print();
+            document.body.innerHTML = originalContents;
         }
     </script>
 }
