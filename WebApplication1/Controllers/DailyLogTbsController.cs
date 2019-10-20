@@ -151,7 +151,6 @@ namespace WebApplication1.Controllers
         {
             #region list
             var result = (from p in db.DailyLogTbs
-                         
 
                           select new
                           {

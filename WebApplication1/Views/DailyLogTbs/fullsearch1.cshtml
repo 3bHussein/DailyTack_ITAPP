@@ -21,6 +21,7 @@
     <input value="Print Win" onclick="window.print();" type="button" />
     <input value="Print BOdy" onclick="printDiv('pro')" type="button" />
 
+
     <div class="container" dir="ltr">
         @using (Html.BeginForm("fullsearch1", "DailyLogTbs", FormMethod.Post))
         {
@@ -28,6 +29,7 @@
             <div class="row form-horizontal">
 
                 @Html.TextBox("search1", null, new { @class = "form-control col-md-11", placeholder = "search", style = "max-width:500px" })
+                
 
                 <input type="submit" style="direction:ltr" value="searchByData" class="btn btn-primary col-md-2" />|
                 @Html.ActionLink("Back To list", "index", new { area = "" }, new { @class = "btn btn-info" })
@@ -73,20 +75,20 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Day)
                 </td>
-                <td>
+                <td style="text-align:left">
                     @Html.DisplayFor(modelItem => item.DateOfDay)
                 </td>
-                <td>
+                <td style="text-align:left">
                     @Html.DisplayFor(modelItem => item.Satement)
                 </td>
-                <td>
+                @*<td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-success" }) |
                     @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-warning" }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
 
 
 
-                </td>
+                </td>*@
             </tr>
         }
         <Hr class="btn-warning" />

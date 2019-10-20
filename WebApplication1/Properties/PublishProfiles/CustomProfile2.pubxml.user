@@ -280,7 +280,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/19/2019 11:40:26</publishTime>
     </File>
     <File Include="bin/WebApplication1.dll">
-      <publishTime>10/20/2019 11:44:56</publishTime>
+      <publishTime>10/20/2019 11:52:21</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>10/19/2019 11:40:26</publishTime>
@@ -487,7 +487,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/19/2019 11:40:23</publishTime>
     </File>
     <File Include="Views/DailyLogTbs/fullsearch1.cshtml">
-      <publishTime>10/20/2019 11:41:54</publishTime>
+      <publishTime>10/20/2019 11:52:04</publishTime>
     </File>
     <File Include="Views/DailyLogTbs/go.cshtml">
       <publishTime>10/03/2019 17:57:43</publishTime>
