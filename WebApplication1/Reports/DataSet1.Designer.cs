@@ -279,13 +279,13 @@ namespace WebApplication1.Reports {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DailyLogTbDataTable : global::System.Data.TypedTableBase<DailyLogTbRow> {
             
+            private global::System.Data.DataColumn columnId;
+            
             private global::System.Data.DataColumn columnDay;
             
             private global::System.Data.DataColumn columnDateOfDay;
             
             private global::System.Data.DataColumn columnSatement;
-            
-            private global::System.Data.DataColumn columnId;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -322,6 +322,14 @@ namespace WebApplication1.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdColumn {
+                get {
+                    return this.columnId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn DayColumn {
                 get {
                     return this.columnDay;
@@ -341,14 +349,6 @@ namespace WebApplication1.Reports {
             public global::System.Data.DataColumn SatementColumn {
                 get {
                     return this.columnSatement;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IdColumn {
-                get {
-                    return this.columnId;
                 }
             }
             
@@ -392,10 +392,10 @@ namespace WebApplication1.Reports {
             public DailyLogTbRow AddDailyLogTbRow(string Day, System.DateTime DateOfDay, string Satement) {
                 DailyLogTbRow rowDailyLogTbRow = ((DailyLogTbRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        null,
                         Day,
                         DateOfDay,
-                        Satement,
-                        null};
+                        Satement};
                 rowDailyLogTbRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDailyLogTbRow);
                 return rowDailyLogTbRow;
@@ -425,33 +425,33 @@ namespace WebApplication1.Reports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnId = base.Columns["Id"];
                 this.columnDay = base.Columns["Day"];
                 this.columnDateOfDay = base.Columns["DateOfDay"];
                 this.columnSatement = base.Columns["Satement"];
-                this.columnId = base.Columns["Id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId);
                 this.columnDay = new global::System.Data.DataColumn("Day", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDay);
                 this.columnDateOfDay = new global::System.Data.DataColumn("DateOfDay", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDateOfDay);
                 this.columnSatement = new global::System.Data.DataColumn("Satement", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSatement);
-                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
-                this.columnDay.MaxLength = 2147483647;
-                this.columnSatement.MaxLength = 2147483647;
                 this.columnId.AutoIncrement = true;
                 this.columnId.AutoIncrementSeed = -1;
                 this.columnId.AutoIncrementStep = -1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
+                this.columnDay.MaxLength = 2147483647;
+                this.columnSatement.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -594,6 +594,17 @@ namespace WebApplication1.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Id {
+                get {
+                    return ((int)(this[this.tableDailyLogTb.IdColumn]));
+                }
+                set {
+                    this[this.tableDailyLogTb.IdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Day {
                 get {
                     try {
@@ -637,17 +648,6 @@ namespace WebApplication1.Reports {
                 }
                 set {
                     this[this.tableDailyLogTb.SatementColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Id {
-                get {
-                    return ((int)(this[this.tableDailyLogTb.IdColumn]));
-                }
-                set {
-                    this[this.tableDailyLogTb.IdColumn] = value;
                 }
             }
             
@@ -847,28 +847,28 @@ namespace WebApplication1.Reports.DataSet1TableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "DailyLogTb";
+            tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Day", "Day");
             tableMapping.ColumnMappings.Add("DateOfDay", "DateOfDay");
             tableMapping.ColumnMappings.Add("Satement", "Satement");
-            tableMapping.ColumnMappings.Add("Id", "Id");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [DailyLogTb] WHERE (([Id] = @Original_Id))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[DailyLogTb] WHERE (([Id] = @Original_Id))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [DailyLogTb] ([Day], [DateOfDay], [Satement]) VALUES (@Day, @DateOfDa" +
-                "y, @Satement)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[DailyLogTb] ([Day], [DateOfDay], [Satement]) VALUES (@Day, @Da" +
+                "teOfDay, @Satement)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Day", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Day", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateOfDay", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfDay", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Satement", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Satement", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [DailyLogTb] SET [Day] = @Day, [DateOfDay] = @DateOfDay, [Satement] = @Sat" +
-                "ement WHERE (([Id] = @Original_Id))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[DailyLogTb] SET [Day] = @Day, [DateOfDay] = @DateOfDay, [Satement] " +
+                "= @Satement WHERE (([Id] = @Original_Id))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Day", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Day", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateOfDay", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfDay", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -880,8 +880,7 @@ namespace WebApplication1.Reports.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=.;Initial Catalog=ITDB;Integrated Security=True;MultipleActiveResultS" +
-                "ets=True;Application Name=EntityFramework";
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ITDBConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -890,7 +889,7 @@ namespace WebApplication1.Reports.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Day, DateOfDay, Satement, Id FROM DailyLogTb";
+            this._commandCollection[0].CommandText = "SELECT Id, Day, DateOfDay, Satement FROM dbo.DailyLogTb";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

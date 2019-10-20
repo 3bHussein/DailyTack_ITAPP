@@ -16,6 +16,8 @@
 <body>
     <br />
 
+
+@Html.ActionLink("Print", "Export", "DailyLogTbs", new { area = "" }, new { @class = "btn btn-danger" })
     <div class="container" dir="ltr">
         @using (Html.BeginForm("fullsearch1", "DailyLogTbs", FormMethod.Post))
         {

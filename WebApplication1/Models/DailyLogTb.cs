@@ -16,7 +16,7 @@ namespace WebApplication1.Models
     {
         public int Id { get; set; }
         public string Day { get; set; }
-        public Nullable<System.DateTime> DateOfDay { get; set; }
+        public System.DateTime DateOfDay { get; set; }
         public string Satement { get; set; }
     }
 }

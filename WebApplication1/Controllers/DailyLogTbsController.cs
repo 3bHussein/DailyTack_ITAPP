@@ -155,7 +155,7 @@ namespace WebApplication1.Controllers
 
                           select new
                           {
-                              p.Id,
+                             
                               p.Day,
                               p.DateOfDay,
                               p. Satement,
@@ -168,7 +168,7 @@ namespace WebApplication1.Controllers
 
 
             ReportDocument rd = new ReportDocument();
-            rd.Load(Path.Combine(Server.MapPath("../Reports/CrystalReport1.rpt")));
+            rd.Load(Path.Combine(Server.MapPath("~/Reports/CrystalReport1.rpt")));
                 rd.SetDataSource(result);
             Response.Buffer = false;
             Response.ClearContent();
@@ -176,7 +176,7 @@ namespace WebApplication1.Controllers
             Stream steam = rd.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
             steam.Seek(0, SeekOrigin.Begin);
 
-            return File(steam, "application/pdf", "ListOfStocks.pdf");
+            return File(steam, "application/pdf", "IT-Task.pdf");
         }
 
     }

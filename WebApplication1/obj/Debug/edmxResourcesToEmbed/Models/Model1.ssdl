@@ -15,9 +15,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Day" Type="nvarchar(max)" />
-    <Property Name="DateOfDay" Type="date" />
-    <Property Name="Satement" Type="nvarchar(max)" />
+    <Property Name="Day" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateOfDay" Type="date" Nullable="false" />
+    <Property Name="Satement" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="orderTb">
     <Key>
