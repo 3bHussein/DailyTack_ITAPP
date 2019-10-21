@@ -230,10 +230,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-WebApplication1-20191003022744.mdf" />
-    <Content Include="App_Data\aspnet-WebApplication1-20191003022744_log.ldf">
-      <DependentUpon>aspnet-WebApplication1-20191003022744.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\all.css" />
     <Content Include="Content\datepicker.css" />
     <Content Include="Content\IT_%282017_film%29_logo.svg" />
@@ -363,6 +359,9 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reports\CrystalReport1.rpt">

@@ -17,7 +17,11 @@
     <br />
 
 
-@Html.ActionLink("Print", "Export", "DailyLogTbs", new { area = "" }, new { @class = "btn btn-danger" })
+@*@Html.ActionLink("Print", "Export", "DailyLogTbs", new { area = "" }, new { @class = "btn btn-danger" })*@
+    <input value="Print Win" onclick="window.print();" type="button" />
+    <input value="Print BOdy" onclick="printDiv('pro')" type="button" />
+
+
     <div class="container" dir="ltr">
         @using (Html.BeginForm("fullsearch1", "DailyLogTbs", FormMethod.Post))
         {
@@ -25,8 +29,9 @@
             <div class="row form-horizontal">
 
                 @Html.TextBox("search1", null, new { @class = "form-control col-md-11", placeholder = "search", style = "max-width:500px" })
+                
 
-                <input type="submit" style="direction:ltr" value="searchByName" class="btn btn-primary col-md-2" />|
+                <input type="submit" style="direction:ltr" value="searchByData" class="btn btn-primary col-md-2" />|
                 @Html.ActionLink("Back To list", "index", new { area = "" }, new { @class = "btn btn-info" })
 
             </div>
@@ -50,7 +55,7 @@
     @*<p>
             @Html.ActionLink("Create New", "Create")
         </p>*@
-    <table class="table">
+    <table class="table" id="pro">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Day)
@@ -70,24 +75,65 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Day)
                 </td>
-                <td>
+                <td style="text-align:left">
                     @Html.DisplayFor(modelItem => item.DateOfDay)
                 </td>
-                <td>
+                <td style="text-align:left">
                     @Html.DisplayFor(modelItem => item.Satement)
                 </td>
-                <td>
+                @*<td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-success" }) |
                     @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-warning" }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
 
 
 
-                </td>
+                </td>*@
             </tr>
         }
         <Hr class="btn-warning" />
     </table>
 
+
+
+
+@section Scripts {
+    <script>
+        function PrintElem(elem) {
+            var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+
+            mywindow.document.write('<html><head><title>' + document.title + '</title>');
+            mywindow.document.write('</head><body >');
+            mywindow.document.write('<table>' + document. + '</table>');
+            mywindow.document.write(document.getElementById(elem).innerHTML);
+            mywindow.document.write('</body></html>');
+
+            mywindow.document.close(); // necessary for IE >= 10
+            mywindow.focus(); // necessary for IE >= 10*/
+
+            mywindow.print();
+            mywindow.close();
+
+            return true;
+        }
+    </script>
+
+    <script>
+        //function printcon(el) {
+        //    var re = document.body.innerHTML;
+        //    var prcon = document.getElementById(el).innerHTML;
+        //    document.body.innerHTML = prcon;
+        //    window.print();
+        //}
+
+        function printDiv(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+    </script>
+}
 </body>
 </html>

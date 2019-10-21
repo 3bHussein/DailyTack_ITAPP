@@ -15,9 +15,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Day" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="DateOfDay" Type="DateTime" Precision="0" />
-    <Property Name="Satement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Day" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateOfDay" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Satement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
   <EntityType Name="orderTb">
     <Key>
