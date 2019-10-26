@@ -21,6 +21,7 @@
     <input value="Print Win" onclick="window.print();" type="button" />
     <input value="Print BOdy" onclick="printDiv('pro')" type="button" />
 
+
     <div class="container" dir="ltr">
         @using (Html.BeginForm("fullsearch1", "DailyLogTbs", FormMethod.Post))
         {
@@ -28,6 +29,7 @@
             <div class="row form-horizontal">
 
                 @Html.TextBox("search1", null, new { @class = "form-control col-md-11", placeholder = "search", style = "max-width:500px" })
+                
 
                 <input type="submit" style="direction:ltr" value="searchByData" class="btn btn-primary col-md-2" />|
                 @Html.ActionLink("Back To list", "index", new { area = "" }, new { @class = "btn btn-info" })

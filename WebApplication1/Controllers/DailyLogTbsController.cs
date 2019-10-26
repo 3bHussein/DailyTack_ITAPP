@@ -23,7 +23,7 @@ namespace WebApplication1.Controllers
         // GET: DailyLogTbs
         public ActionResult Index(int Page=1)
         {
-            return View(db.DailyLogTbs.ToList().OrderBy(a=>a.Id).ToPagedList(Page,8));
+            return View(db.DailyLogTbs.ToList().OrderByDescending(a=>a.Id).ToPagedList(Page,8));
 
         }
 
