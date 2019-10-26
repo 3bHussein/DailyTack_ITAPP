@@ -44,6 +44,11 @@
 <div style="text-align:right ; float:right;width:20%">
 
     <img style="width: 10rem;" src="~/Content/IT_(2017_film)_logo.svg" />
+    <br />
+    <br />
+    @Html.ActionLink("Print", "Export", "DailyLogTbs", new { area = "" }, new { @class = "btn btn-danger" })
+
+
 </div>
 
 
@@ -69,10 +74,15 @@
 <br />
 
 
-<p style="clear:both;">
+<div style="clear:both; ">
     @Html.ActionLink("Create New Task", "Create")
-</p>
-<table class="table">
+</div>
+@*<div style="text-align:;float:left" >
+@Html.ActionLink("Print", "Export", "DailyLogTbs", new { area = "" }, new { @class = "btn btn-danger" })
+
+</div>*@
+
+<table class="table" style="clear:both;">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Day)
@@ -112,4 +122,5 @@
 </table>
 
 @Html.PagedListPager((IPagedList)Model, a => Url.Action("index", new { Page = a }), PagedListRenderOptions.MinimalWithPageCountText)
+
 </html>
