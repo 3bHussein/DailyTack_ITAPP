@@ -11,11 +11,13 @@ namespace WebApplication1.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class DailyLogTb
     {
         public int Id { get; set; }
         public string Day { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime DateOfDay { get; set; }
         public string Satement { get; set; }
     }

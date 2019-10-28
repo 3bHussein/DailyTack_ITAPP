@@ -3,6 +3,22 @@
 @using PagedList;
 @using PagedList.Mvc;
 
+@section style{
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/datepicker.css" rel="stylesheet" />
+    <style>
+
+
+        #Satement {
+            max-width: 1000px;
+            width: 100% !important;
+            height: 150px !important;
+        }
+    </style>
+
+}
+
+
 
 <html dir="rtl">
 
@@ -78,9 +94,9 @@
     @Html.ActionLink("Create New Task", "Create")
 </div>
 @*<div style="text-align:;float:left" >
-@Html.ActionLink("Print", "Export", "DailyLogTbs", new { area = "" }, new { @class = "btn btn-danger" })
+    @Html.ActionLink("Print", "Export", "DailyLogTbs", new { area = "" }, new { @class = "btn btn-danger" })
 
-</div>*@
+    </div>*@
 
 <table class="table" style="clear:both;">
     <tr>
@@ -124,3 +140,22 @@
 @Html.PagedListPager((IPagedList)Model, a => Url.Action("index", new { Page = a }), PagedListRenderOptions.MinimalWithPageCountText)
 
 </html>
+@section Scripts {
+    <script type="text/javascript">
+
+        $(function () {
+            $("#search1").datepicker
+                ({
+                    dateFormat: 'yy-mm-dd',
+                    showStatus: true,
+                    showWeeks: true,
+                    highlightWeek: true,
+                    numberOfMonths: 1,
+                    showAnim: "scale",
+                    showOptions: {
+                        origin: ["top", "left"]
+                    }
+                });
+        });
+    </script>
+}
