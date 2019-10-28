@@ -3,6 +3,21 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section style{
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/datepicker.css" rel="stylesheet" />
+    <style>
+
+
+        #Satement {
+            max-width: 1000px;
+            width: 100% !important;
+            height: 150px !important;
+        }
+    </style>
+
+}
+
 
 <!DOCTYPE html>
 
@@ -64,38 +79,41 @@
     <table class="table" id="pro">
         <tr>
             <th style="text-align:right">
-                @Html.DisplayNameFor(model => model.Day)
+                @*@Html.DisplayNameFor(model => model.Day)*@
+                اليوم
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateOfDay)
+                @*@Html.DisplayNameFor(model => model.DateOfDay)*@
+                التاريخ
             </th>
             <th style="text-align:right">
-                @Html.DisplayNameFor(model => model.Satement)
+                @*@Html.DisplayNameFor(model => model.Satement)*@
+                البيان
             </th>
             <th></th>
         </tr>
 
         @foreach (var item in Model)
         {
-    <tr>
-        <td style="text-align:right">
-            @Html.DisplayFor(modelItem => item.Day)
-        </td>
-        <td style="text-align:left">
-            @Html.DisplayFor(modelItem => item.DateOfDay)
-        </td>
-        <td style="text-align:right">
-            @Html.DisplayFor(modelItem => item.Satement)
-        </td>
-        @*<td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-success" }) |
-            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-warning" }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+            <tr>
+                <td style="text-align:right">
+                    @Html.DisplayFor(modelItem => item.Day)
+                </td>
+                <td style="text-align:left">
+                    @Html.DisplayFor(modelItem => item.DateOfDay)
+                </td>
+                <td style="text-align:right">
+                    @Html.DisplayFor(modelItem => item.Satement)
+                </td>
+                @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-success" }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-warning" }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
 
 
 
-        </td>*@
-    </tr>
+                    </td>*@
+            </tr>
         }
         <Hr class="btn-warning" />
     </table>
@@ -104,27 +122,27 @@
 
 
     @section Scripts {
-        <script>
-            function PrintElem(elem) {
-                var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+        @*<script>
+                function PrintElem(elem) {
+                    var mywindow = window.open('', 'PRINT', 'height=400,width=600');
 
-                mywindow.document.write('<html><head><title>' + document.title + '</title>');
-                mywindow.document.write('</head><body >');
-                mywindow.document.write('<table>' + document. + '</table>');
-                mywindow.document.write(document.getElementById(elem).innerHTML);
-                mywindow.document.write('</body></html>');
+                    mywindow.document.write('<html><head><title>' + document.title + '</title>');
+                    mywindow.document.write('</head><body >');
+                    mywindow.document.write('<table>' + document. + '</table>');
+                    mywindow.document.write(document.getElementById(elem).innerHTML);
+                    mywindow.document.write('</body></html>');
 
-                mywindow.document.close(); // necessary for IE >= 10
-                mywindow.focus(); // necessary for IE >= 10*/
+                    mywindow.document.close(); // necessary for IE >= 10
+                    mywindow.focus(); // necessary for IE >= 10*/
 
-                mywindow.print();
-                mywindow.close();
+                    mywindow.print();
+                    mywindow.close();
 
-                return true;
-            }
-        </script>
+                    return true;
+                }
+            </script>*@
 
-        <script>
+        @*<script>
             //function printcon(el) {
             //    var re = document.body.innerHTML;
             //    var prcon = document.getElementById(el).innerHTML;
@@ -139,7 +157,28 @@
                 window.print();
                 document.body.innerHTML = originalContents;
             }
-        </script>
+        </script>*@
+            <script type="text/javascript">
+
+                $(function () {
+                    $("#search1").datepicker
+                        ({
+                            dateFormat: 'yy-mm-dd',
+                            showStatus: true,
+                            showWeeks: true,
+                            highlightWeek: true,
+                            numberOfMonths: 1,
+                            showAnim: "clip",
+                            //showAnim: "fold",
+                            showOptions: {
+                                origin: ["top", "left"]
+                            }
+                        });
+                });
+            </script>
+   
+
+
     }
 </body>
 </html>
