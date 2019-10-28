@@ -563,7 +563,6 @@ F:\ITAPP\WebApplication1\bin\Microsoft.Owin.Security.Twitter.xml
 F:\ITAPP\WebApplication1\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 F:\ITAPP\WebApplication1\bin\Microsoft.Owin.Security.OAuth.xml
 F:\ITAPP\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-F:\ITAPP\WebApplication1\obj\Debug\WebApplication1.csprojAssemblyReference.cache
 F:\ITAPP\WebApplication1\obj\Debug\WebApplication1.csproj.CoreCompileInputs.cache
 F:\ITAPP\WebApplication1\obj\Debug\WebApplication1.csproj.CopyComplete
 F:\ITAPP\WebApplication1\obj\Debug\WebApplication1.dll
