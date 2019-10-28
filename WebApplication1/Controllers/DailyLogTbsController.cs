@@ -130,23 +130,19 @@ namespace WebApplication1.Controllers
             }
             base.Dispose(disposing);
         }
-
-
-
-
-
-
         public ActionResult fullsearch(string search)
         {
 
             return View("fullsearch", db.DailyLogTbs.Where(a => a.Day.Contains(search)));
         }
 
+
         public ActionResult fullsearch1(string search1)
         {
 
             return View("fullsearch1", db.DailyLogTbs.Where(a => a.DateOfDay.ToString().Contains(search1)));
         }
+        #region Export
         public ActionResult Export()
         {
             #region list
@@ -177,6 +173,6 @@ namespace WebApplication1.Controllers
 
             return File(steam, "application/pdf", "IT-Task.pdf");
         }
-
+        #endregion
     }
 }

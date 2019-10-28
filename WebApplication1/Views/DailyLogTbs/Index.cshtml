@@ -33,7 +33,7 @@
 
             @Html.TextBox("search", null, new { @class = "form-control col-md-11", placeholder = "search", style = "max-width:500px" })
 
-            <input type="submit" value="searchName " class="btn btn-outline-primary col-md-1" />|
+            <input type="submit" value="searchName " class="btn btn-outline-primary col-md-2" />|
             @Html.ActionLink("Back To list", "index", new { area = "" }, new { @class = "btn btn-info" })
 
         </div>
@@ -49,7 +49,7 @@
 
             @Html.TextBox("search1", null, new { @class = "form-control col-md-11", placeholder = "(years-month-Day)  ", style = "max-width:500px" })
 
-            <input type="submit" value="searchData " class="btn btn-outline-secondary col-md-1" />|
+            <input type="submit" value="searchData " class="btn btn-outline-secondary col-md-2" />|
             @Html.ActionLink("Back To list", "index", new { area = "" }, new { @class = "btn btn-info" })
 
         </div>
@@ -67,20 +67,6 @@
 
 </div>
 
-
-@*<br />
-    @using (Html.BeginForm("fullsearch", "DailyLogTbs", FormMethod.Post))
-    {
-
-        <div class="row form-horizontal">
-
-            @Html.TextBox("search", null, new { @class = "form-control col-md-11", placeholder = "search", style = "max-width:500px" })
-
-            <input type="submit" value="searchFR" class="btn btn-primary col-md-1" />|
-            @Html.ActionLink("Back To list", "index", new { area = "" }, new { @class = "btn btn-info" })
-
-        </div>
-    }*@
 
 
 
@@ -127,7 +113,11 @@
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning" }) |
                 @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-success" }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                @if (User.Identity.IsAuthenticated)
+                {
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+
+                }
 
 
 
@@ -137,7 +127,7 @@
 
 </table>
 
-@Html.PagedListPager((IPagedList)Model, a => Url.Action("index", new { Page = a }), PagedListRenderOptions.MinimalWithPageCountText)
+@Html.PagedListPager((IPagedList)Model, a => Url.Action("index", new { Page = a }), PagedListRenderOptions.ClassicPlusFirstAndLast)
 
 </html>
 @section Scripts {
@@ -151,7 +141,8 @@
                     showWeeks: true,
                     highlightWeek: true,
                     numberOfMonths: 1,
-                    showAnim: "scale",
+                    showAnim: "clip",
+                    //showAnim: "fold",
                     showOptions: {
                         origin: ["top", "left"]
                     }
