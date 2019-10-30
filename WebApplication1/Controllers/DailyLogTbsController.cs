@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication1.Models;
-
 //
 using PagedList;
 using PagedList.Mvc;
@@ -23,8 +22,8 @@ namespace WebApplication1.Controllers
         // GET: DailyLogTbs
         public ActionResult Index(int Page=1)
         {
-            return View(db.DailyLogTbs.ToList().OrderByDescending(a=>a.Id).ToPagedList(Page,10));
-
+            var dailyLogTbs = db.DailyLogTbs.Include(d => d.DayofWeak);
+            return View(db.DailyLogTbs.ToList().OrderByDescending(a => a.Id).ToPagedList(Page, 10));
         }
 
         // GET: DailyLogTbs/Details/5
@@ -45,6 +44,7 @@ namespace WebApplication1.Controllers
         // GET: DailyLogTbs/Create
         public ActionResult Create()
         {
+            ViewBag.Dayofweekid = new SelectList(db.DayofWeaks, "ID", "Day");
             return View();
         }
 
@@ -53,7 +53,7 @@ namespace WebApplication1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Day,DateOfDay,Satement")] DailyLogTb dailyLogTb)
+        public ActionResult Create([Bind(Include = "Id,Day,DateOfDay,Satement,Dayofweekid")] DailyLogTb dailyLogTb)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +62,7 @@ namespace WebApplication1.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.Dayofweekid = new SelectList(db.DayofWeaks, "ID", "Day", dailyLogTb.Dayofweekid);
             return View(dailyLogTb);
         }
 
@@ -77,6 +78,7 @@ namespace WebApplication1.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Dayofweekid = new SelectList(db.DayofWeaks, "ID", "Day", dailyLogTb.Dayofweekid);
             return View(dailyLogTb);
         }
 
@@ -85,7 +87,7 @@ namespace WebApplication1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Day,DateOfDay,Satement")] DailyLogTb dailyLogTb)
+        public ActionResult Edit([Bind(Include = "Id,Day,DateOfDay,Satement,Dayofweekid")] DailyLogTb dailyLogTb)
         {
             if (ModelState.IsValid)
             {
@@ -93,6 +95,7 @@ namespace WebApplication1.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.Dayofweekid = new SelectList(db.DayofWeaks, "ID", "Day", dailyLogTb.Dayofweekid);
             return View(dailyLogTb);
         }
 
@@ -130,11 +133,11 @@ namespace WebApplication1.Controllers
             }
             base.Dispose(disposing);
         }
-        public ActionResult fullsearch(string search)
-        {
+        //public ActionResult fullsearch(string search)
+        //{
 
-            return View("fullsearch", db.DailyLogTbs.Where(a => a.Day.Contains(search)));
-        }
+        //    //return View("fullsearch", db.DailyLogTbs.Where(a => a.Day.Contains(search)));
+        //}
 
 
         public ActionResult fullsearch1(string search1)
@@ -150,11 +153,10 @@ namespace WebApplication1.Controllers
 
                           select new
                           {
-                             
-                              p.Day,
+
                               p.DateOfDay,
-                              p. Satement,
-                            
+                              p.Satement,
+
                           }).ToList();
             #endregion
 
@@ -164,7 +166,7 @@ namespace WebApplication1.Controllers
 
             ReportDocument rd = new ReportDocument();
             rd.Load(Path.Combine(Server.MapPath("~/Reports/CrystalReport1.rpt")));
-                rd.SetDataSource(result);
+            rd.SetDataSource(result);
             Response.Buffer = false;
             Response.ClearContent();
             Response.ClearHeaders();

@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<WebApplication1.Models.DailyLogTb>
 
+
 @using PagedList;
 @using PagedList.Mvc;
 
@@ -7,8 +8,6 @@
     <link href="~/Content/jquery-ui.css" rel="stylesheet" />
     <link href="~/Content/datepicker.css" rel="stylesheet" />
     <style>
-
-
         #Satement {
             max-width: 1000px;
             width: 100% !important;
@@ -25,7 +24,7 @@
 @*<Br />
     <i class="fa fa-home fa-fw fa-3x"></i>*@
 
-<div style="float:left;width:80%">
+@*<div style="float:left;width:80%">
     @using (Html.BeginForm("fullsearch", "DailyLogTbs", FormMethod.Post))
     {
 
@@ -39,7 +38,7 @@
         </div>
 
     }
-</div>
+</div>*@
 
 <div style="float:left;width:80%;">
     @using (Html.BeginForm("fullsearch1", "DailyLogTbs", FormMethod.Post))
@@ -72,22 +71,17 @@
 
 
 
-
 <br />
 
 
 <div style="clear:both; ">
     @Html.ActionLink("Create New Task", "Create")
 </div>
-@*<div style="text-align:;float:left" >
-    @Html.ActionLink("Print", "Export", "DailyLogTbs", new { area = "" }, new { @class = "btn btn-danger" })
-
-    </div>*@
 
 <table class="table" style="clear:both;">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Day)
+            Day
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DateOfDay)
@@ -95,6 +89,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Satement)
         </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.DayofWeak.Day)
+        </th>*@
         <th></th>
     </tr>
 
@@ -102,8 +99,11 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Day)
+                @Html.DisplayFor(modelItem => item.DayofWeak.Day)
             </td>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.Day)
+        </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.DateOfDay)
             </td>
@@ -126,10 +126,8 @@
     }
 
 </table>
-
 @Html.PagedListPager((IPagedList)Model, a => Url.Action("index", new { Page = a }), PagedListRenderOptions.ClassicPlusFirstAndLast)
 
-</html>
 @section Scripts {
     <script type="text/javascript">
 
@@ -150,3 +148,6 @@
         });
     </script>
 }
+
+
+</html>

@@ -27,6 +27,7 @@ namespace WebApplication1.Models
     
         public virtual DbSet<absenceTb> absenceTbs { get; set; }
         public virtual DbSet<DailyLogTb> DailyLogTbs { get; set; }
+        public virtual DbSet<DayofWeak> DayofWeaks { get; set; }
         public virtual DbSet<orderTb> orderTbs { get; set; }
     }
 }

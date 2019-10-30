@@ -182,6 +182,7 @@
     <Compile Include="Controllers\absenceTbsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DailyLogTbsController.cs" />
+    <Compile Include="Controllers\DayofWeaksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\orderTbsController.cs" />
@@ -193,6 +194,9 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DailyLogTb.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DayofWeak.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
@@ -344,6 +348,11 @@
     <Content Include="Views\absenceTbs\Edit.cshtml" />
     <Content Include="Views\absenceTbs\Index.cshtml" />
     <Content Include="Views\DailyLogTbs\fullsearch1.cshtml" />
+    <Content Include="Views\DayofWeaks\Create.cshtml" />
+    <Content Include="Views\DayofWeaks\Delete.cshtml" />
+    <Content Include="Views\DayofWeaks\Details.cshtml" />
+    <Content Include="Views\DayofWeaks\Edit.cshtml" />
+    <Content Include="Views\DayofWeaks\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

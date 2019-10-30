@@ -16,9 +16,17 @@
       <EntityTypeMapping TypeName="ITDBModel.DailyLogTb">
         <MappingFragment StoreEntitySet="DailyLogTb">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Day" ColumnName="Day" />
           <ScalarProperty Name="DateOfDay" ColumnName="DateOfDay" />
           <ScalarProperty Name="Satement" ColumnName="Satement" />
+          <ScalarProperty Name="Dayofweekid" ColumnName="Dayofweekid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DayofWeaks">
+      <EntityTypeMapping TypeName="ITDBModel.DayofWeak">
+        <MappingFragment StoreEntitySet="DayofWeak">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

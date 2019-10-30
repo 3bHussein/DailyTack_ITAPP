@@ -20,9 +20,16 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Day" Type="nvarchar(max)" Nullable="false" />
           <Property Name="DateOfDay" Type="date" Nullable="false" />
           <Property Name="Satement" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Dayofweekid" Type="int" />
+        </EntityType>
+        <EntityType Name="DayofWeak">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Day" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="orderTb">
           <Key>
@@ -33,10 +40,27 @@
           <Property Name="quantity" Type="int" />
           <Property Name="Day" Type="date" />
         </EntityType>
+        <Association Name="FK_PersonOrder">
+          <End Role="DayofWeak" Type="Self.DayofWeak" Multiplicity="0..1" />
+          <End Role="DailyLogTb" Type="Self.DailyLogTb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DayofWeak">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DailyLogTb">
+              <PropertyRef Name="Dayofweekid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ITDBModelStoreContainer">
           <EntitySet Name="absenceTb" EntityType="Self.absenceTb" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DailyLogTb" EntityType="Self.DailyLogTb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DayofWeak" EntityType="Self.DayofWeak" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="orderTb" EntityType="Self.orderTb" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_PersonOrder" Association="Self.FK_PersonOrder">
+            <End Role="DayofWeak" EntitySet="DayofWeak" />
+            <End Role="DailyLogTb" EntitySet="DailyLogTb" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -58,9 +82,18 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Day" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DateOfDay" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Satement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Dayofweekid" Type="Int32" />
+          <NavigationProperty Name="DayofWeak" Relationship="Self.FK_PersonOrder" FromRole="DailyLogTb" ToRole="DayofWeak" />
+        </EntityType>
+        <EntityType Name="DayofWeak">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Day" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DailyLogTbs" Relationship="Self.FK_PersonOrder" FromRole="DayofWeak" ToRole="DailyLogTb" />
         </EntityType>
         <EntityType Name="orderTb">
           <Key>
@@ -71,10 +104,27 @@
           <Property Name="quantity" Type="Int32" />
           <Property Name="Day" Type="DateTime" Precision="0" />
         </EntityType>
+        <Association Name="FK_PersonOrder">
+          <End Role="DayofWeak" Type="Self.DayofWeak" Multiplicity="0..1" />
+          <End Role="DailyLogTb" Type="Self.DailyLogTb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DayofWeak">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DailyLogTb">
+              <PropertyRef Name="Dayofweekid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ITDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="absenceTbs" EntityType="Self.absenceTb" />
           <EntitySet Name="DailyLogTbs" EntityType="Self.DailyLogTb" />
+          <EntitySet Name="DayofWeaks" EntityType="Self.DayofWeak" />
           <EntitySet Name="orderTbs" EntityType="Self.orderTb" />
+          <AssociationSet Name="FK_PersonOrder" Association="Self.FK_PersonOrder">
+            <End Role="DayofWeak" EntitySet="DayofWeaks" />
+            <End Role="DailyLogTb" EntitySet="DailyLogTbs" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -97,9 +147,17 @@
             <EntityTypeMapping TypeName="ITDBModel.DailyLogTb">
               <MappingFragment StoreEntitySet="DailyLogTb">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Day" ColumnName="Day" />
                 <ScalarProperty Name="DateOfDay" ColumnName="DateOfDay" />
                 <ScalarProperty Name="Satement" ColumnName="Satement" />
+                <ScalarProperty Name="Dayofweekid" ColumnName="Dayofweekid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DayofWeaks">
+            <EntityTypeMapping TypeName="ITDBModel.DayofWeak">
+              <MappingFragment StoreEntitySet="DayofWeak">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

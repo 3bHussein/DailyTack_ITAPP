@@ -96,8 +96,11 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td style="text-align:right">
+                @*<td style="text-align:right">
                     @Html.DisplayFor(modelItem => item.Day)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.DayofWeak.Day)
                 </td>
                 <td style="text-align:left">
                     @Html.DisplayFor(modelItem => item.DateOfDay)
