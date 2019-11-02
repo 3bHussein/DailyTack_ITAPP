@@ -11,10 +11,12 @@ namespace WebApplication1.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class absenceTb
     {
         public int id { get; set; }
+        [DisplayFormat(DataFormatString ="{0:dd/MM/yyyy}",ApplyFormatInEditMode =true)]
         public Nullable<System.DateTime> DataOfDay { get; set; }
         public string EmployeeName { get; set; }
         public string Type { get; set; }

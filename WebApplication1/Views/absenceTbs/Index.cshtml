@@ -6,9 +6,16 @@
 <html dir="rtl">
 
 
-<p>
+@*<p>
     @Html.ActionLink("Create New Absence", "Create")
-</p>
+</p>*@
+<div style="clear:both;text-align:right; ">
+    @*@Html.ActionLink("Create New Task", "Create")*@
+    @Html.ActionLink("انشاء اجازة /اذن", "Create", null, new { @class = "btn btn-info" })
+
+
+</div>
+
 <table class="table" style="text-align:right">
     <tr>
         <th>
