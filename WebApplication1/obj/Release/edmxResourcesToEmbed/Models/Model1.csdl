@@ -15,9 +15,18 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Day" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="DateOfDay" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Satement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Dayofweekid" Type="Int32" />
+    <NavigationProperty Name="DayofWeak" Relationship="Self.FK_PersonOrder" FromRole="DailyLogTb" ToRole="DayofWeak" />
+  </EntityType>
+  <EntityType Name="DayofWeak">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Day" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DailyLogTbs" Relationship="Self.FK_PersonOrder" FromRole="DayofWeak" ToRole="DailyLogTb" />
   </EntityType>
   <EntityType Name="orderTb">
     <Key>
@@ -28,9 +37,26 @@
     <Property Name="quantity" Type="Int32" />
     <Property Name="Day" Type="DateTime" Precision="0" />
   </EntityType>
+  <Association Name="FK_PersonOrder">
+    <End Role="DayofWeak" Type="Self.DayofWeak" Multiplicity="0..1" />
+    <End Role="DailyLogTb" Type="Self.DailyLogTb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DayofWeak">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DailyLogTb">
+        <PropertyRef Name="Dayofweekid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ITDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="absenceTbs" EntityType="Self.absenceTb" />
     <EntitySet Name="DailyLogTbs" EntityType="Self.DailyLogTb" />
+    <EntitySet Name="DayofWeaks" EntityType="Self.DayofWeak" />
     <EntitySet Name="orderTbs" EntityType="Self.orderTb" />
+    <AssociationSet Name="FK_PersonOrder" Association="Self.FK_PersonOrder">
+      <End Role="DayofWeak" EntitySet="DayofWeaks" />
+      <End Role="DailyLogTb" EntitySet="DailyLogTbs" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

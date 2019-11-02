@@ -3,6 +3,21 @@
 @{
     ViewBag.Title = "Edit";
 }
+@section style{
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/datepicker.css" rel="stylesheet" />
+    <style>
+        #Satement {
+            max-width: 1000px;
+            width: 100% !important;
+            height: 150px !important;
+        }
+    </style>
+
+}
+
+
+
 
 <h2>Edit</h2>
 
@@ -31,7 +46,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DateOfDay, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DateOfDay, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.DateOfDay, new { htmlAttributes = new { @class = "form-control", id = "datepicker" } })
                 @Html.ValidationMessageFor(model => model.DateOfDay, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -63,3 +78,22 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+@section Scripts {
+    <script type="text/javascript">
+
+        $(function () {
+            $("#datepicker").datepicker
+                ({
+                    dateFormat: 'mm/dd/yy',
+                    showStatus: true,
+                    showWeeks: true,
+                    highlightWeek: true,
+                    numberOfMonths: 1,
+                    showAnim: "scale",
+                    showOptions: {
+                        origin: ["top", "left"]
+                    }
+                });
+        });
+    </script>
+}

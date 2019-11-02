@@ -280,7 +280,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/30/2019 10:30:32</publishTime>
     </File>
     <File Include="bin/WebApplication1.dll">
-      <publishTime>10/30/2019 10:36:21</publishTime>
+      <publishTime>11/02/2019 09:36:25</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>10/30/2019 10:30:33</publishTime>
@@ -361,7 +361,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/30/2019 10:30:31</publishTime>
     </File>
     <File Include="Models/Model1.edmx.diagram">
-      <publishTime>10/30/2019 10:30:31</publishTime>
+      <publishTime>10/30/2019 12:41:26</publishTime>
     </File>
     <File Include="Reports/CrystalReport1.cs">
       <publishTime>10/20/2019 10:17:12</publishTime>
@@ -478,28 +478,43 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/30/2019 10:30:31</publishTime>
     </File>
     <File Include="Views/DailyLogTbs/Create.cshtml">
-      <publishTime>10/30/2019 10:34:16</publishTime>
+      <publishTime>10/30/2019 12:14:55</publishTime>
     </File>
     <File Include="Views/DailyLogTbs/Delete.cshtml">
-      <publishTime>10/30/2019 10:30:31</publishTime>
+      <publishTime>10/30/2019 12:51:08</publishTime>
     </File>
     <File Include="Views/DailyLogTbs/Details.cshtml">
-      <publishTime>10/30/2019 10:30:31</publishTime>
+      <publishTime>10/30/2019 12:00:52</publishTime>
     </File>
     <File Include="Views/DailyLogTbs/Edit.cshtml">
-      <publishTime>10/30/2019 10:30:31</publishTime>
+      <publishTime>11/02/2019 10:05:00</publishTime>
     </File>
     <File Include="Views/DailyLogTbs/fullsearch.cshtml">
       <publishTime>10/30/2019 10:30:31</publishTime>
     </File>
     <File Include="Views/DailyLogTbs/fullsearch1.cshtml">
-      <publishTime>10/30/2019 10:30:31</publishTime>
+      <publishTime>11/02/2019 09:33:59</publishTime>
     </File>
     <File Include="Views/DailyLogTbs/go.cshtml">
       <publishTime>10/03/2019 17:57:43</publishTime>
     </File>
     <File Include="Views/DailyLogTbs/Index.cshtml">
-      <publishTime>10/30/2019 10:30:31</publishTime>
+      <publishTime>10/30/2019 13:02:05</publishTime>
+    </File>
+    <File Include="Views/DayofWeaks/Create.cshtml">
+      <publishTime>10/30/2019 11:57:42</publishTime>
+    </File>
+    <File Include="Views/DayofWeaks/Delete.cshtml">
+      <publishTime>10/30/2019 11:57:42</publishTime>
+    </File>
+    <File Include="Views/DayofWeaks/Details.cshtml">
+      <publishTime>10/30/2019 11:57:43</publishTime>
+    </File>
+    <File Include="Views/DayofWeaks/Edit.cshtml">
+      <publishTime>10/30/2019 11:57:43</publishTime>
+    </File>
+    <File Include="Views/DayofWeaks/Index.cshtml">
+      <publishTime>10/30/2019 11:57:43</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>10/30/2019 10:30:31</publishTime>
@@ -544,7 +559,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/30/2019 10:30:31</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>10/30/2019 10:30:31</publishTime>
+      <publishTime>10/30/2019 11:59:32</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>10/30/2019 10:30:31</publishTime>
@@ -556,7 +571,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/30/2019 10:30:31</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/30/2019 10:30:31</publishTime>
+      <publishTime>11/02/2019 10:05:53</publishTime>
     </File>
   </ItemGroup>
 </Project>
