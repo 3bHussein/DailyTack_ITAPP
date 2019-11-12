@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c7d7c98ecd5247dab8b33531d6593f9e" Name="Diagram1">
+      <Diagram DiagramId="c7d7c98ecd5247dab8b33531d6593f9e" Name="Diagram1" ZoomLevel="127">
         <EntityTypeShape EntityType="ITDBModel.absenceTb" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ITDBModel.DailyLogTb" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ITDBModel.DayofWeak" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />

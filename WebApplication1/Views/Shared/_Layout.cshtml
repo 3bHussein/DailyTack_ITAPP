@@ -116,13 +116,13 @@
 
     </div>
 
-    <footer class="text-center " style="padding:5px;bottom:0px;position: fixed;
+    @*<footer class="text-center " style="padding:5px;bottom:0px;position: fixed;
   bottom: 0;
   width: 100%;">
             <hr />
 
             <span class="foott">&copy; @DateTime.Now.Year - IT-Department of Hicis</span>
-        </footer>
+        </footer>*@
 
 
 
@@ -133,6 +133,11 @@
     @RenderSection("scripts", required: false)
 
 <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.1/lib/darkmode-js.min.js"></script>
+    <script>
+        new Darkmode().showWidget();
+    </script>
+
 </body>
 </html>
 
