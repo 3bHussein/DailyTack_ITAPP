@@ -17,7 +17,7 @@
     <link href="./Content/Style.css" rel="stylesheet" />
     <script src="./Scripts/modernizr-2.8.3.js"></script>
 </head>
-<body style="background:  #BABBB6;font-size:1.6rem;"dir="rtl" >
+<body style="background:  #BABBB6!important;font-size:1.6rem;"dir="rtl" >
     <div class="page-wrapper chiller-theme toggled">
         <!-- # -->
 
@@ -133,7 +133,9 @@
     @RenderSection("scripts", required: false)
 
 <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.1/lib/darkmode-js.min.js"></script>
+
+    @*<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.1/lib/darkmode-js.min.js"></script>*@
+    <script src="~/Scripts/darkmode-js.min.js"></script>
     <script>
         new Darkmode().showWidget();
     </script>

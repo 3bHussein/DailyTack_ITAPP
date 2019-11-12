@@ -4,8 +4,8 @@
     <EntitySetMapping Name="absenceTbs">
       <EntityTypeMapping TypeName="ITDBModel.absenceTb">
         <MappingFragment StoreEntitySet="absenceTb">
+          <ScalarProperty Name="DateOfDay" ColumnName="DateOfDay" />
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="DataOfDay" ColumnName="DataOfDay" />
           <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
           <ScalarProperty Name="Type" ColumnName="Type" />
           <ScalarProperty Name="Description" ColumnName="Description" />
