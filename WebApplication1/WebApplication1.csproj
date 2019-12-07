@@ -226,10 +226,10 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reports\DataSet1.Designer.cs">
+    <Compile Include="Reports\DataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -274,16 +274,16 @@
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile2.pubxml" />
-    <Content Include="Reports\DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <Content Include="Reports\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
     </Content>
-    <None Include="Reports\DataSet1.xsd">
+    <None Include="Reports\DataSet2.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="Reports\DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <Content Include="Reports\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\darkmode-js.min.js" />

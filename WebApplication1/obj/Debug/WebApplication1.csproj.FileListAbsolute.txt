@@ -566,4 +566,3 @@ C:\Users\Administrator\Desktop\ITAPP\WebApplication1\bin\Microsoft.Owin.Security
 C:\Users\Administrator\Desktop\ITAPP\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Administrator\Desktop\ITAPP\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\Administrator\Desktop\ITAPP\WebApplication1\obj\Debug\WebApplication1.pdb
-C:\Users\Administrator\Desktop\ITAPP\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache

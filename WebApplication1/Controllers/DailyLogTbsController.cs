@@ -15,10 +15,15 @@ using System.IO;
 
 namespace WebApplication1.Controllers
 {
+
     public class DailyLogTbsController : Controller
     {
-        private ITDBEntities db = new ITDBEntities();
+        static string fa ;
+        string fg = "";
+        
 
+        private ITDBEntities db = new ITDBEntities();
+        
         // GET: DailyLogTbs
         public ActionResult Index(int Page=1)
         {
@@ -139,25 +144,38 @@ namespace WebApplication1.Controllers
         //    //return View("fullsearch", db.DailyLogTbs.Where(a => a.Day.Contains(search)));
         //}
 
-
         public ActionResult fullsearch1(string search1)
         {
 
+          string x= search1;
+            //string y = "";
+            //y += x;
+            fa = "";
+            fa += x;
+
             return View("fullsearch1", db.DailyLogTbs.Where(a => a.DateOfDay.ToString().Contains(search1)));
         }
+        
+        
+
+
         #region Export
         public ActionResult Export()
         {
+            
             #region list
             var result = (from p in db.DailyLogTbs
-
+                          where p.DateOfDay.ToString() == fa
                           select new
                           {
 
                               p.DateOfDay,
                               p.Satement,
-
-                          }).ToList();
+                              p.DayofWeak.Day
+                              
+                          }
+                         
+                          ).ToList();
             #endregion
 
 
@@ -174,6 +192,7 @@ namespace WebApplication1.Controllers
             steam.Seek(0, SeekOrigin.Begin);
 
             return File(steam, "application/pdf", "IT-Task.pdf");
+
         }
         #endregion
     }
